@@ -1,0 +1,14 @@
+# Temp & Scratch Files
+*.py
+*.json
+*.html.tmp
+raw_playlist.html
+m7_title.txt
+alt_embeds.json
+check_song_result.json
+
+# System & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

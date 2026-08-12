@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>agomonivibes</title>
+  <meta name="description" content="Agomoni Vibes - Durga Puja Interactive Experience">
+
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Noto+Serif+Bengali:wght@700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Background Image with Parallax -->
+  <div class="bg-wrapper" id="bgWrapper">
+    <div class="bg-image" id="bgImage"></div>
+    <div class="bg-overlay" id="bgOverlay"></div>
+  </div>
+
+  <!-- Interactive Particles Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Top Navigation Header Layer -->
+  <header class="top-nav">
+    <!-- Top Left: Live Clock -->
+    <div class="top-left-clock" id="topClock">12:06 AM</div>
+
+    <!-- Top Center: Online Listener Count -->
+    <div class="top-center-status">
+      <span class="pulse-dot"></span>
+      <span id="onlineCount">852</span> online
+    </div>
+
+    <!-- Top Right: Streaming Links & Nav Buttons (Single Horizontal Row) -->
+    <div class="top-right-nav">
+      <a href="https://spotify.com" target="_blank" class="pill-btn spotify-pill">
+        <i class="fab fa-spotify"></i> Spotify
+      </a>
+      <a href="https://music.youtube.com" target="_blank" class="pill-btn yt-pill">
+        <i class="fab fa-youtube"></i> YT Music
+      </a>
+      <button class="pill-btn sub-pill">Playlists</button>
+      <button class="pill-btn sub-pill">Songs</button>
+      <button class="pill-btn sub-pill"><i class="fas fa-download"></i> Install</button>
+    </div>
+  </header>
+
+  <!-- Main Hero Title Section -->
+  <main class="hero-section">
+    <h1 class="hero-title">আগমনী</h1>
+    <p class="hero-subtitle">PUJA VIBES ALL DAY ALL NIGHT LONG — OPEN ALL HOURS</p>
+  </main>
+
+
+  <!-- Bottom Floating Music Player -->
+  <div class="music-player">
+    <div class="player-left">
+      <div class="album-art" id="albumArt"></div>
+      <div class="track-details">
+        <div class="track-title" id="trackTitle">"Mahishasura Mardini..."</div>
+        <div class="track-artist" id="trackArtist">Birendra Krishna Bhadra</div>
+      </div>
+    </div>
+
+    <div class="player-controls">
+      <button class="ctrl-btn" id="prevBtn" title="Previous Track"><i class="fas fa-step-backward"></i></button>
+      <button class="play-circle-btn" id="playBtn" title="Play/Pause"><i class="fas fa-play" id="playIcon"></i></button>
+      <button class="ctrl-btn" id="nextBtn" title="Next Track"><i class="fas fa-step-forward"></i></button>
+    </div>
+
+    <div class="player-right">
+      <button class="ctrl-btn" id="muteBtn" title="Mute/Unmute"><i class="fas fa-volume-up" id="muteIcon"></i></button>
+      <input type="range" id="volumeRange" min="0" max="100" value="80" class="volume-slider">
+      <span class="time-display"><span id="currentTime">0:28</span> / <span id="totalTime">6:18</span></span>
+    </div>
+
+    <!-- Progress Timeline Bar -->
+    <div class="player-progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+      <input type="range" id="seekSlider" min="0" max="100" value="0" class="seek-input">
+    </div>
+  </div>
+
+  <!-- Footer Contact -->
+  <footer class="bottom-contact">
+    BUILD WITH LOVE BY SHREEJIT
+  </footer>
+
+  <!-- Hidden YouTube Player for Audio Streaming -->
+  <div id="youtube-player" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; overflow: hidden; top: -9999px;"></div>
+
+  <!-- YouTube IFrame API & Application Script -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

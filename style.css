@@ -351,7 +351,7 @@ body {
 .player-controls {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex-shrink: 0;
 }
 
@@ -360,9 +360,10 @@ body {
   border: none;
   color: rgba(255, 255, 255, 0.75);
   font-size: 0.92rem;
+  padding: 4px 6px;
   cursor: pointer;
   transition: color 0.2s ease, transform 0.15s ease;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 }
@@ -405,8 +406,11 @@ body {
 .player-right {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   flex-shrink: 0;
+  margin-left: 12px;
+  padding-left: 14px;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .volume-slider {

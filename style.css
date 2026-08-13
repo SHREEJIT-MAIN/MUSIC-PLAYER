@@ -119,21 +119,22 @@ body {
   white-space: nowrap;
 }
 
-/* Top Center/Left: Online Counter */
 .top-center-status {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: clamp(0.72rem, 0.9vw, 0.82rem);
+  gap: 5px;
+  font-size: clamp(0.68rem, 0.8vw, 0.78rem);
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
-  background: rgba(0, 0, 0, 0.25);
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  padding: 4px 12px;
+  padding: 4px 14px 4px 10px;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .pulse-dot {
@@ -478,10 +479,13 @@ body {
    ========================================================================== */
 @media (max-width: 768px) {
   .top-nav {
-    padding: 16px 20px;
+    padding: 14px 16px;
     flex-direction: column;
     align-items: stretch;
-    gap: 12px;
+    gap: 10px;
+    box-sizing: border-box;
+    max-width: 100vw;
+    overflow: hidden;
   }
 
   .top-bar-main {
@@ -489,6 +493,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    box-sizing: border-box;
   }
 
   .top-left-clock {
@@ -496,8 +501,11 @@ body {
   }
 
   .top-center-status {
-    font-size: 0.75rem;
-    padding: 4px 12px;
+    font-size: 0.72rem;
+    padding: 3px 14px 3px 8px;
+    gap: 5px;
+    margin-right: 0;
+    flex-shrink: 0;
   }
 
   .top-right-nav {
@@ -557,8 +565,14 @@ body {
 
 @media (max-width: 480px) {
   .top-nav {
-    padding: 14px 16px;
-    gap: 10px;
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .top-center-status {
+    font-size: 0.7rem;
+    padding: 3px 12px 3px 7px;
+    gap: 4px;
   }
 
   .hero-section {

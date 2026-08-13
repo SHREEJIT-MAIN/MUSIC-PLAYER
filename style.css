@@ -14,19 +14,20 @@
   --font-bengali: 'Noto Serif Bengali', serif;
 }
 
-* {
+html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  width: 100%;
+  max-width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  position: relative;
 }
 
 body {
   font-family: var(--font-body);
   background-color: var(--bg-deep);
-  min-height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  position: relative;
   color: var(--white);
   -webkit-font-smoothing: antialiased;
 }
@@ -92,38 +93,47 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 30px 40px;
+  padding: clamp(12px, 2.5vw, 30px) clamp(16px, 3.5vw, 40px);
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
   z-index: 20;
   pointer-events: auto;
 }
 
+.top-bar-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 /* Top Left: Clock */
 .top-left-clock {
-  font-size: 0.95rem;
+  font-size: clamp(0.82rem, 1.1vw, 0.95rem);
   font-weight: 600;
   letter-spacing: 1.5px;
   color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
 }
 
-/* Top Center: Online Counter */
+/* Top Center/Left: Online Counter */
 .top-center-status {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.82rem;
+  font-size: clamp(0.72rem, 0.9vw, 0.82rem);
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
   background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(8px);
-  padding: 6px 14px;
+  -webkit-backdrop-filter: blur(8px);
+  padding: 4px 12px;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
 }
 
 .pulse-dot {
@@ -157,7 +167,9 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  flex-wrap: wrap;
+  max-width: 100%;
 }
 
 .pill-btn {
@@ -166,17 +178,18 @@ body {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 20px;
-  padding: 6px 16px;
+  padding: 5px 12px;
   color: var(--white);
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: clamp(0.68rem, 0.8vw, 0.78rem);
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+  white-space: nowrap;
 }
 
 .pill-btn:hover {
@@ -201,8 +214,8 @@ body {
 }
 
 .sub-pill {
-  font-size: 0.75rem;
-  padding: 5px 14px;
+  font-size: clamp(0.68rem, 0.8vw, 0.75rem);
+  padding: 5px 12px;
   color: rgba(255, 255, 255, 0.85);
 }
 
@@ -211,31 +224,35 @@ body {
    ========================================================================== */
 .hero-section {
   position: absolute;
-  top: 24.5%;
+  top: clamp(26%, 28vh, 32%);
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 400%;
+  width: 100%;
+  max-width: 100vw;
+  padding: 0 16px;
   pointer-events: none;
   z-index: 10;
 }
 
 .hero-title {
   font-family: var(--font-bengali);
-  font-size: 8.2rem;
+  font-size: clamp(2.5rem, 8vw, 7.5rem);
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--white);
   text-shadow: 0 6px 30px rgba(0, 0, 0, 0.8);
-  letter-spacing: 2px;
+  letter-spacing: clamp(0.5px, 0.2vw, 2px);
 }
 
 .hero-subtitle {
-  font-size: 0.78rem;
+  font-size: clamp(0.6rem, 1.2vw, 0.78rem);
   font-weight: 700;
-  letter-spacing: 6px;
+  letter-spacing: clamp(1.5px, 0.35vw, 5px);
   color: rgba(255, 255, 255, 0.85);
-  margin-top: 2px;
+  margin: 6px auto 0;
+  max-width: 90vw;
+  line-height: 1.4;
   text-transform: uppercase;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
@@ -268,8 +285,9 @@ body {
 .player-left {
   display: flex;
   align-items: center;
-  gap: 1px;
-  min-width: 180px;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
 }
 
 .album-art {
@@ -303,28 +321,33 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  min-width: 0;
 }
 
 .track-title {
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--white);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 150px;
+  max-width: 170px;
 }
 
 .track-artist {
-  font-size: 0.6rem;
+  font-size: 0.65rem;
   color: rgba(255, 255, 255, 0.6);
   margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .player-controls {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .ctrl-btn {
@@ -358,6 +381,7 @@ body {
   cursor: pointer;
   box-shadow: 0 4px 14px rgba(255, 255, 255, 0.35);
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .play-circle-btn:hover {
@@ -377,6 +401,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .volume-slider {
@@ -440,11 +465,12 @@ body {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.9rem;
-  color: rgba(255, 250, 208, 0.727);
-  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  color: rgba(255, 250, 208, 0.75);
+  letter-spacing: 1.2px;
   z-index: 10;
   pointer-events: auto;
+  white-space: nowrap;
 }
 
 /* ==========================================================================
@@ -452,29 +478,136 @@ body {
    ========================================================================== */
 @media (max-width: 768px) {
   .top-nav {
-    padding: 20px;
+    padding: 16px 20px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .top-bar-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .top-left-clock {
+    font-size: 0.88rem;
   }
 
   .top-center-status {
-    display: none;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+  }
+
+  .top-right-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .pill-btn {
+    font-size: 0.72rem;
+    padding: 4px 10px;
+  }
+
+  .hero-section {
+    top: 32%;
+    padding: 0 16px;
   }
 
   .hero-title {
-    font-size: 3.5rem;
+    font-size: clamp(2.8rem, 11vw, 4.5rem);
+    letter-spacing: 1px;
   }
 
-  .whatsapp-banner {
-    width: 94%;
-    bottom: 100px;
+  .hero-subtitle {
+    font-size: clamp(0.6rem, 2.2vw, 0.72rem);
+    letter-spacing: 2.5px;
+    margin-top: 8px;
+    line-height: 1.3;
   }
 
   .music-player {
-    width: 94%;
-    bottom: 25px;
-    padding: 8px 14px;
+    width: 92%;
+    max-width: 460px;
+    bottom: 50px;
+    padding: 10px 16px;
+    border-radius: 28px;
+  }
+
+  .track-title {
+    max-width: 140px;
   }
 
   .player-right {
     display: none;
+  }
+
+  .bottom-contact {
+    bottom: 16px;
+    font-size: 0.68rem;
+    letter-spacing: 0.8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-nav {
+    padding: 14px 16px;
+    gap: 10px;
+  }
+
+  .hero-section {
+    top: 34%;
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem, 10vw, 3.6rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.62rem;
+    letter-spacing: 1.8px;
+    line-height: 1.35;
+  }
+
+  .music-player {
+    width: 94%;
+    bottom: 42px;
+    padding: 8px 12px;
+  }
+
+  .album-art {
+    width: 38px;
+    height: 38px;
+  }
+
+  .track-title {
+    max-width: 110px;
+    font-size: 0.68rem;
+  }
+
+  .track-artist {
+    font-size: 0.6rem;
+  }
+
+  .play-circle-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+  }
+
+  .ctrl-btn {
+    font-size: 0.85rem;
+  }
+
+  .bottom-contact {
+    bottom: 14px;
+    font-size: 0.62rem;
+    letter-spacing: 0.5px;
   }
 }

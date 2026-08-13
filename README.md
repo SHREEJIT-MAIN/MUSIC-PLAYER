@@ -10,7 +10,7 @@ An interactive, high-aesthetic web application and audio player interface built 
 - **YouTube Audio Integration**: Streams music directly from YouTube playlist tracks with dynamic YouTube thumbnail art for each song.
 - **Live Header Widgets**: Live local clock (`12:34 AM`) and fluctuating online listener counter (`🟢 850+ online`).
 - **Interactive Parallax & Particles**: Dynamic mouse-driven background parallax physics and golden firefly canvas particles.
-- **Header Navigation**: Single-line pill links for Spotify, YouTube Music, Playlists, Songs, and Install.
+- **Header Navigation**: Single-line pill links for Spotify, YouTube Music, Playlists, and Songs.
 - **Bengali Festive Typography**: Bold Google Noto Serif Bengali typography centered cleanly over custom Durga Puja artwork.
 
 ## 🚀 Built With

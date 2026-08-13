@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 
 <body>
@@ -34,16 +34,16 @@
 
   <!-- Top Navigation Header Layer -->
   <header class="top-nav">
-    <!-- Top Left: Live Clock -->
-    <div class="top-left-clock" id="topClock">12:06 AM</div>
-
-    <!-- Top Center: Online Listener Count -->
-    <div class="top-center-status">
-      <span class="pulse-dot"></span>
-      <span id="onlineCount">852</span> online
+    <!-- Top Left: Live Clock & Online Counter Group -->
+    <div class="top-bar-main">
+      <div class="top-left-clock" id="topClock">12:06 AM</div>
+      <div class="top-center-status">
+        <span class="pulse-dot"></span>
+        <span id="onlineCount">852</span> online
+      </div>
     </div>
 
-    <!-- Top Right: Streaming Links & Nav Buttons (Single Horizontal Row) -->
+    <!-- Top Right: Streaming Links & Nav Buttons -->
     <div class="top-right-nav">
       <a href="https://spotify.com" target="_blank" class="pill-btn spotify-pill">
         <i class="fab fa-spotify"></i> Spotify
@@ -53,7 +53,6 @@
       </a>
       <button class="pill-btn sub-pill">Playlists</button>
       <button class="pill-btn sub-pill">Songs</button>
-      <button class="pill-btn sub-pill"><i class="fas fa-download"></i> Install</button>
     </div>
   </header>
 

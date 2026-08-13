@@ -293,10 +293,10 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(updateClock, 1000);
   updateClock();
 
-  let currentCount = 852;
+  let currentCount = 4;
   setInterval(() => {
-    const delta = Math.floor(Math.random() * 7) - 3;
-    currentCount = Math.max(830, Math.min(890, currentCount + delta));
+    const delta = Math.floor(Math.random() * 3) - 1;
+    currentCount = Math.max(3, Math.min(5, currentCount + delta));
     if (onlineCount) onlineCount.innerText = currentCount;
   }, 4000);
 
